@@ -13,16 +13,53 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-            <div>
-                <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                </a>
-            </div>
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+        <style>
+            /* Reset default styles to ensure full screen layout */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            html, body {
+                height: 100%;
+                width: 100%;
+                overflow-x: hidden;
+            }
+
+            body {
+                font-family: 'Inter', 'Figtree', sans-serif;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+
+            /* Ensure the guest layout takes full screen */
+            .guest-layout-wrapper {
+                min-height: 100vh;
+                width: 100%;
+                position: relative;
+                overflow: hidden;
+            }
+
+            /* Remove any default Laravel styling that might interfere */
+            .guest-content {
+                width: 100%;
+                height: 100%;
+                position: relative;
+            }
+
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+                .guest-layout-wrapper {
+                    padding: 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="guest-layout-wrapper">
+            <div class="guest-content">
                 {{ $slot }}
             </div>
         </div>
