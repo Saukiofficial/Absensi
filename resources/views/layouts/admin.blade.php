@@ -220,7 +220,7 @@
             <div class="px-4 py-4 border-t border-white/10">
                 <div :class="{'opacity-100': sidebarOpen, 'opacity-0': !sidebarOpen}" class="transition-all duration-300">
                     <p class="text-xs text-blue-200 text-center">
-                        © 2024 Sistem Absensi
+                        © 2025 Sistem Absensi SMK Mahardhika
                     </p>
                     <div class="flex justify-center space-x-2 mt-2">
                         <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
